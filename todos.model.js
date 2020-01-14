@@ -1,11 +1,20 @@
-const mongoose=require('mongoose');
-const Schema=mongoose.Schema;
+const mongoose = require('mongoose');
+
 
 //Schema
-let todosSchema=new Schema({
-    _id:{type:String},
-    name:{type:String},
-    description:{type:String},
-    birth:{type:Date}
+const todosSchema = new mongoose.Schema({
+    name: {
+        type: String, required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    birth: {
+        type: Date,
+        required: true
+    }
 });
-module.exports=mongoose.model('todos',todosSchema);
+
+
+module.exports = mongoose.model('Todo', todosSchema);
